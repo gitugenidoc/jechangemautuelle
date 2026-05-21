@@ -13,6 +13,7 @@
 ## Étape 2: Configuration du Projet
 
 Vercel détectera automatiquement:
+
 - **Framework**: Static (HTML)
 - **Build Command**: (laisser vide)
 - **Output Directory**: (laisser vide)
@@ -24,6 +25,7 @@ Vercel détectera automatiquement:
 ## Étape 3: Ajouter le Domaine Custom
 
 ### Option A: Accéder avec l'URL Vercel (Gratuit)
+
 ```
 https://jechangemautuelle.vercel.app
 ```
@@ -49,12 +51,14 @@ https://jechangemautuelle.vercel.app
 ## 📊 Après le Déploiement
 
 ### Dashboard Vercel
+
 - 📈 Analytics
 - 🔄 Redéploiement automatique (à chaque push Git)
 - 🌍 CDN Global
 - ⚡ Optimisations auto
 
 ### Auto-Redeploy sur Git Push
+
 ```bash
 # À chaque fois que tu fais:
 git push origin main
