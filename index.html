@@ -1,0 +1,774 @@
+<!doctype html>
+
+<html class="dark" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recrutement - Je Change Ma Mutuelle</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=Manrope:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              tertiary: "#b9c7e4",
+              "tertiary-container": "#8593af",
+              "surface-container-low": "#191c1e",
+              "surface-container-lowest": "#0b0f10",
+              "on-tertiary-fixed": "#0d1c32",
+              "on-secondary-container": "#ffddd2",
+              "secondary-fixed-dim": "#ffb59d",
+              "inverse-primary": "#006d43",
+              "secondary-fixed": "#ffdbd0",
+              primary: "#59de9b",
+              "surface-variant": "#323537",
+              "on-tertiary-fixed-variant": "#39475f",
+              "on-secondary-fixed": "#390c00",
+              "surface-tint": "#59de9b",
+              "on-tertiary-container": "#1e2c43",
+              "on-secondary": "#5d1900",
+              "surface-container": "#1d2022",
+              "on-error": "#690005",
+              "on-surface": "#e0e3e5",
+              "on-background": "#e0e3e5",
+              secondary: "#ffb59d",
+              "surface-bright": "#363a3b",
+              "tertiary-fixed": "#d6e3ff",
+              "error-container": "#93000a",
+              "on-secondary-fixed-variant": "#832600",
+              "on-primary": "#003921",
+              "outline-variant": "#3d4a41",
+              "surface-container-high": "#272a2c",
+              "on-primary-fixed": "#002111",
+              "on-primary-container": "#00331d",
+              "inverse-on-surface": "#2d3133",
+              "primary-fixed": "#78fbb6",
+              "inverse-surface": "#e0e3e5",
+              "surface-dim": "#101415",
+              surface: "#101415",
+              "on-error-container": "#ffdad6",
+              background: "#101415",
+              "on-primary-fixed-variant": "#005232",
+              "primary-fixed-dim": "#59de9b",
+              "on-tertiary": "#233148",
+              "surface-container-highest": "#323537",
+              "tertiary-fixed-dim": "#b9c7e4",
+              "secondary-container": "#b83900",
+              "primary-container": "#00a86b",
+              error: "#ffb4ab",
+              outline: "#869489",
+              "on-surface-variant": "#bccabe",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "section-padding-desktop": "120px",
+              unit: "8px",
+              "container-max": "1200px",
+              "section-padding-mobile": "64px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "display-lg": ["Hanken Grotesk"],
+              "label-bold": ["Manrope"],
+              "display-lg-mobile": ["Hanken Grotesk"],
+              "headline-md": ["Hanken Grotesk"],
+              "body-md": ["Manrope"],
+              "body-lg": ["Manrope"],
+            },
+            fontSize: {
+              "display-lg": [
+                "64px",
+                {
+                  lineHeight: "72px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-bold": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg-mobile": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-md": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  fontWeight: "400",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "400",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .blob-1 {
+        animation: blobBounce1 20s infinite alternate;
+      }
+      .blob-2 {
+        animation: blobBounce2 25s infinite alternate;
+      }
+      @keyframes blobBounce1 {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+      }
+      @keyframes blobBounce2 {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(-40px, 40px) scale(0.9);
+        }
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glow-btn {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+      }
+      .glow-btn:hover {
+        box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 shadow-sm border-b-0"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-container-max mx-auto"
+      >
+        <div class="flex items-center gap-4">
+          <img
+            alt="Je Change Ma Mutuelle Logo"
+            class="h-10 w-10 object-contain rounded-full"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVjafJqpDzruKGzEIpTTLGRB6cAlCsYbGMuuwjZp_ELIlDkublJ7oWQ6Gy8r39ENIj-d-TL0b32JKM0oO57M-RrpoUSZbZXulrlmH-4DTVVbcB9mBlJB1yD3TF5d_2SODQ0AFDsZCdcjiqyMlp0wRcrUBCEhq8hJkzxsdqs2VIapih5tPS3nAhyOxM4nw-dCldpEWgp-NugQ3qj-oNOY0yNMk0RzNtWrm02usZLEkMZnivmN83wcGpl6ZHKKK32-6lHY5YGQuCsCU"
+          />
+          <span
+            class="font-display-lg-mobile text-headline-md text-primary tracking-tight hidden md:block"
+            >Je Change Ma Mutuelle</span
+          >
+        </div>
+        <div
+          class="hidden md:flex items-center gap-8 font-label-bold text-label-bold text-on-surface-variant"
+        >
+          <a
+            class="hover:text-primary transition-colors hover:scale-102 hover:shadow-glow duration-200"
+            href="#pourquoi-nous"
+            >Pourquoi Nous ?</a
+          >
+          <a
+            class="hover:text-primary transition-colors hover:scale-102 hover:shadow-glow duration-200"
+            href="#le-poste"
+            >Le Poste</a
+          >
+          <a
+            class="hover:text-primary transition-colors hover:scale-102 hover:shadow-glow duration-200"
+            href="#processus"
+            >Processus</a
+          >
+          <a
+            class="hover:text-primary transition-colors hover:scale-102 hover:shadow-glow duration-200"
+            href="#valeurs"
+            >Nos Valeurs</a
+          >
+        </div>
+        <div>
+          <a
+            class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold py-3 px-6 rounded-lg hover:bg-[#ff8555] transition-all glow-btn inline-block"
+            href="#postuler"
+            >Postuler</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header
+      class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-section-padding-mobile md:pb-section-padding-desktop overflow-hidden"
+    >
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute inset-0 bg-surface/80 z-10 mix-blend-multiply"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-surface via-surface/90 to-transparent z-10"
+        ></div>
+        <img
+          alt="Hero Background"
+          class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNsoziZRw4ORAMSTPanM6gwOC5-Odldt1uOs1id0ox91xxebo98xUMZAL5BOllhQmco6cD566i-FIJAz9YobBLRprsdRFzuryeaG-W9K8JgxIR44j3vLDtJdDeu20MzYo7pn1xFfz8SjXnOFwx4wKIGOaaRlAj1op4SU50_jDJjnNMF_Fvsf4Zx5QyUaGsmOG3HlWixfQheGoULgNCmHvoeTsVR9wZw9lDUFQfYy7QN8haeEqnCLQgW7pqgiRRMSWMoFnj8vqc_A4"
+        />
+      </div>
+      <!-- Animated Blobs -->
+      <div
+        class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary-container/20 rounded-full blur-[100px] blob-1 z-0 mix-blend-screen pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#ff6b35]/20 rounded-full blur-[80px] blob-2 z-0 mix-blend-screen pointer-events-none"
+      ></div>
+      <div
+        class="relative z-20 max-w-container-max mx-auto px-gutter text-center flex flex-col items-center"
+      >
+        <span
+          class="bg-primary-container/20 text-primary-fixed font-label-bold text-label-bold py-2 px-4 rounded-full mb-6 border border-primary-container/50 inline-block uppercase tracking-wider backdrop-blur-md"
+          >Recrutement Exclusif</span
+        >
+        <h1
+          class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl drop-shadow-lg"
+        >
+          VOUS ÊTES EXPERT EN
+          <span class="text-primary-fixed">VENTE MUTUELLE ?</span>
+          REJOIGNEZ-NOUS !
+        </h1>
+        <p
+          class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 drop-shadow-md"
+        >
+          Donnez un nouvel élan à votre carrière avec des commissions
+          déplafonnées, un environnement de travail premium.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            class="bg-[#ff6b35] text-white font-label-bold text-label-bold py-4 px-8 rounded-lg hover:scale-105 transition-transform duration-300 glow-btn flex items-center justify-center gap-2"
+            href="#postuler"
+          >
+            Je Postule Maintenant
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Why Join Us Section -->
+    <section
+      class="py-section-padding-mobile md:py-section-padding-desktop relative"
+      id="pourquoi-nous"
+    >
+      <div class="max-w-container-max mx-auto px-gutter relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-4">
+            Pourquoi Nous Rejoindre ?
+          </h2>
+          <p
+            class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto"
+          >
+            Un environnement conçu pour la performance et le bien-être de nos
+            experts.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-primary-fixed text-3xl"
+                >payments</span
+              >
+            </div>
+            <h3 class="font-label-bold text-lg text-on-surface mb-3">
+              Commissions Déplafonnées
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Votre talent mérite d'être récompensé à sa juste valeur. Pas de
+              limite à vos gains.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-[#ff6b35] text-3xl"
+                >schedule</span
+              >
+            </div>
+            <h3 class="font-label-bold text-lg text-on-surface mb-3">
+              Horaires Flexibles
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Équilibre vie pro/perso respecté avec des horaires aménagés et
+              télétravail possible.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-primary-fixed text-3xl"
+                >target</span
+              >
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Mettez fin à la prospection à froid grâce à des fiches de
+              prospects qualifiées.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-[#ff6b35] text-3xl"
+                >diversity_3</span
+              >
+            </div>
+            <h3 class="font-label-bold text-lg text-on-surface mb-3">
+              Équipe Bienveillante
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Un management de proximité et une ambiance d'entraide pour vous
+              tirer vers le haut.
+            </p>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-outlined text-primary-fixed text-3xl"
+                >trending_up</span
+              >
+            </div>
+            <h3 class="font-label-bold text-lg text-on-surface mb-3">
+              Évolution Rapide
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Des plans de carrière clairs. Devenez manager ou expert en un
+              temps record.
+            </p>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-[#ff6b35] text-3xl"
+                >laptop_mac</span
+              >
+            </div>
+            <h3 class="font-label-bold text-lg text-on-surface mb-3">
+              Outils Modernes
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              CRM de pointe, téléphonie cloud et matériel performant pour un
+              confort optimal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team/Testimonial Section -->
+    <section
+      class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest relative overflow-hidden"
+    >
+      <div class="max-w-container-max mx-auto px-gutter relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="lg:w-1/2 relative">
+            <div
+              class="absolute inset-0 bg-primary-container/20 blur-[80px] rounded-full z-0"
+            ></div>
+            <img
+              alt="Équipe Je Change Ma Mutuelle"
+              class="w-full h-auto rounded-xl object-cover relative z-10 shadow-2xl border border-surface-container-high"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaRXGFIi2uMgGLLI63cryRK13YukBwCkSkid54U5h_iVyX3hpgUHQjqmjesi1UXnWFOwtuN7m6jjUqhu7iu5XVfMOhLWbEmhtg5E3ZV9kDau2mPDu3l5-0EJHvlOJBRLU7496gq1QihiJTbwdoKvKZLAeZoqW5mIqWkt88Nuc1Qz7MSfUj7A0IoTuvpw94-O5ivLuItRlKhghprlewSItHqobcPMPjut99P6eDm7Fc8w3piXb_VFXjXuUcrX6WEatTY6e0Bc2LpN0"
+            />
+            <!-- Floating Stat Card -->
+            <div
+              class="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl z-20 max-w-[200px] hidden md:block"
+            >
+              <div
+                class="font-display-lg text-4xl text-primary-fixed font-bold mb-1"
+              >
+                98%
+              </div>
+              <div class="font-label-bold text-sm text-on-surface-variant">
+                Des collaborateurs recommandent l'entreprise
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <span
+              class="text-[#ff6b35] font-label-bold text-label-bold uppercase tracking-wider mb-4 block"
+              >Notre Culture</span
+            >
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-6">
+              L'humain au cœur de notre réussite.
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8">
+              Chez Je Change Ma Mutuelle, nous croyons que des collaborateurs
+              épanouis font des clients satisfaits. Nous cultivons un
+              environnement où la performance rime avec bien-être, où chaque
+              succès est célébré et où l'entraide est la norme.
+            </p>
+            <div class="flex gap-4">
+              <span
+                class="bg-surface-container-high px-4 py-2 rounded-full font-label-bold text-sm text-on-surface"
+                >#CDI</span
+              >
+              <span
+                class="bg-surface-container-high px-4 py-2 rounded-full font-label-bold text-sm text-on-surface"
+                >#MutuellePremium</span
+              >
+              <span
+                class="bg-surface-container-high px-4 py-2 rounded-full font-label-bold text-sm text-on-surface"
+                >#Afterworks</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Application Form Section -->
+    <section
+      class="py-section-padding-mobile md:py-section-padding-desktop relative"
+      id="postuler"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-surface to-surface-container-lowest z-0"
+      ></div>
+      <div class="max-w-3xl mx-auto px-gutter relative z-10">
+        <div class="text-center mb-12">
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-4">
+            Prêt à relever le défi ?
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Remplissez ce formulaire, notre équipe RH vous recontactera sous
+            24h.
+          </p>
+        </div>
+        <form
+          action="https://formspree.io/f/xyzgwopq"
+          class="glass-card p-8 md:p-12 rounded-xl shadow-2xl relative overflow-hidden"
+          method="POST"
+        >
+          <!-- Decorative subtle glow in form -->
+          <div
+            class="absolute -top-20 -right-20 w-40 h-40 bg-[#ff6b35]/10 rounded-full blur-[40px] pointer-events-none"
+          ></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label
+                class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+                for="prenom"
+                >Prénom</label
+              >
+              <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors"
+                id="prenom"
+                name="prenom"
+                required=""
+                type="text"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+                for="nom"
+                >Nom</label
+              >
+              <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors"
+                id="nom"
+                name="nom"
+                required=""
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label
+                class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+                for="telephone"
+                >Téléphone</label
+              >
+              <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors"
+                id="telephone"
+                name="telephone"
+                required=""
+                type="tel"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+                for="email"
+                >Email</label
+              >
+              <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors"
+                id="email"
+                name="email"
+                required=""
+                type="email"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label
+                class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+                for="ville"
+                >Ville</label
+              >
+              <input
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors"
+                id="ville"
+                name="ville"
+                required=""
+                type="text"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+                for="experience"
+                >Expérience en Vente</label
+              >
+              <select
+                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors appearance-none"
+                id="experience"
+                name="experience"
+                required=""
+              >
+                <option value="">Sélectionnez...</option>
+                <option value="debutant">Débutant (0-1 an)</option>
+                <option value="intermediaire">Intermédiaire (1-3 ans)</option>
+                <option value="confirme">Confirmé (3-5 ans)</option>
+                <option value="expert">Expert (+5 ans)</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label
+              class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+              for="motivation"
+              >Vos Motivations (Optionnel)</label
+            >
+            <textarea
+              class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-colors resize-none"
+              id="motivation"
+              name="motivation"
+              rows="3"
+            ></textarea>
+          </div>
+          <!-- Drag & Drop CV Area -->
+          <div class="mb-8">
+            <label
+              class="block font-label-bold text-xs uppercase text-on-surface-variant mb-2"
+              >Votre CV</label
+            >
+            <div
+              class="border-2 border-dashed border-outline-variant rounded-xl p-8 text-center bg-surface-container-lowest/50 hover:bg-surface-container-low hover:border-primary-fixed/50 transition-all duration-300 cursor-pointer group"
+              id="dropzone"
+            >
+              <input
+                accept=".pdf,.doc,.docx"
+                class="hidden"
+                id="cv_upload"
+                name="cv_upload"
+                type="file"
+              />
+              <span
+                class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-fixed transition-colors mb-3 block"
+                >cloud_upload</span
+              >
+              <p class="font-label-bold text-on-surface mb-1">
+                Glissez votre CV ici
+              </p>
+              <p class="font-body-md text-sm text-on-surface-variant">
+                ou cliquez pour parcourir (PDF, DOC, DOCX)
+              </p>
+              <p
+                class="mt-3 font-label-bold text-primary-fixed hidden"
+                id="file-name"
+              ></p>
+            </div>
+          </div>
+          <button
+            class="w-full bg-[#ff6b35] text-white font-label-bold text-lg py-4 rounded-lg hover:scale-[1.02] transition-transform duration-300 glow-btn flex justify-center items-center gap-2"
+            type="submit"
+          >
+            Envoyer ma candidature
+            <span class="material-symbols-outlined">send</span>
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center py-section-padding-mobile md:py-16 px-gutter max-w-container-max mx-auto gap-8"
+      >
+        <div class="flex flex-col items-center md:items-start gap-4">
+          <div class="flex items-center gap-3">
+            <img
+              alt="Je Change Ma Mutuelle Logo"
+              class="h-8 w-8 object-contain rounded-full grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVjafJqpDzruKGzEIpTTLGRB6cAlCsYbGMuuwjZp_ELIlDkublJ7oWQ6Gy8r39ENIj-d-TL0b32JKM0oO57M-RrpoUSZbZXulrlmH-4DTVVbcB9mBlJB1yD3TF5d_2SODQ0AFDsZCdcjiqyMlp0wRcrUBCEhq8hJkzxsdqs2VIapih5tPS3nAhyOxM4nw-dCldpEWgp-NugQ3qj-oNOY0yNMk0RzNtWrm02usZLEkMZnivmN83wcGpl6ZHKKK32-6lHY5YGQuCsCU"
+            />
+            <span
+              class="font-display-lg-mobile text-headline-md text-on-surface tracking-tight"
+              >Je Change Ma Mutuelle</span
+            >
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            © 2026 Je Change Ma Mutuelle. Tous droits réservés.
+          </p>
+        </div>
+        <div
+          class="flex flex-wrap justify-center gap-6 font-body-md text-body-md"
+        >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Mentions Légales</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Politique de Confidentialité</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Contact</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // File Upload Interaction
+      const dropzone = document.getElementById("dropzone");
+      const fileInput = document.getElementById("cv_upload");
+      const fileNameDisplay = document.getElementById("file-name");
+
+      dropzone.addEventListener("click", () => fileInput.click());
+
+      dropzone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropzone.classList.add(
+          "bg-primary-container/10",
+          "border-primary-fixed",
+        );
+        dropzone.classList.remove(
+          "bg-surface-container-lowest/50",
+          "border-outline-variant",
+        );
+      });
+
+      dropzone.addEventListener("dragleave", () => {
+        dropzone.classList.remove(
+          "bg-primary-container/10",
+          "border-primary-fixed",
+        );
+        dropzone.classList.add(
+          "bg-surface-container-lowest/50",
+          "border-outline-variant",
+        );
+      });
+
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropzone.classList.remove(
+          "bg-primary-container/10",
+          "border-primary-fixed",
+        );
+        dropzone.classList.add(
+          "bg-surface-container-lowest/50",
+          "border-outline-variant",
+        );
+
+        if (e.dataTransfer.files.length) {
+          fileInput.files = e.dataTransfer.files;
+          updateFileName();
+        }
+      });
+
+      fileInput.addEventListener("change", updateFileName);
+
+      function updateFileName() {
+        if (fileInput.files.length > 0) {
+          fileNameDisplay.textContent = fileInput.files[0].name;
+          fileNameDisplay.classList.remove("hidden");
+          dropzone.querySelector("p:not(#file-name)").classList.add("hidden");
+          dropzone.querySelector(".text-sm").classList.add("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>
