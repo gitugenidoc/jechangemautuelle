@@ -503,14 +503,28 @@
           </p>
         </div>
         <form
-          action="https://formspree.io/f/xlgvbzey"
+          action="https://formsubmit.co/recrutement@jechangemamutuelle.online"
           class="glass-card p-8 md:p-12 rounded-xl shadow-2xl relative overflow-hidden"
           method="POST"
+          enctype="multipart/form-data"
         >
           <!-- Decorative subtle glow in form -->
           <div
             class="absolute -top-20 -right-20 w-40 h-40 bg-[#ff6b35]/10 rounded-full blur-[40px] pointer-events-none"
           ></div>
+          <!-- FormSubmit.co Hidden Fields -->
+          <input name="_captcha" type="hidden" value="false" />
+          <input
+            name="_next"
+            type="hidden"
+            value="https://www.jechangemamutuelle.online/jobs?status=sent"
+          />
+          <input
+            name="_subject"
+            type="hidden"
+            value="Nouvelle candidature - Je Change Ma Mutuelle"
+          />
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label
@@ -633,8 +647,9 @@
                 accept=".pdf,.doc,.docx"
                 class="hidden"
                 id="cv_upload"
-                name="cv_upload"
+                name="cv"
                 type="file"
+                required=""
               />
               <span
                 class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-fixed transition-colors mb-3 block"
